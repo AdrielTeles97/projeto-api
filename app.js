@@ -5,6 +5,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var apiRouterV1 = require('./routes/apiRouterV1');
+var apiRouterV2 = require('./routes/apiRouterV2');
 
 var app = express();
 
@@ -16,5 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/v1', apiRouterV1);
+app.use('/api/v2', apiRouterV2);
 
 module.exports = app;
